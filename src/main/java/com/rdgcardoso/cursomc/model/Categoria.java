@@ -1,4 +1,4 @@
-package com.rdgcardoso.cursomc.domain;
+package com.rdgcardoso.cursomc.model;
 
 import java.io.Serializable;
 
