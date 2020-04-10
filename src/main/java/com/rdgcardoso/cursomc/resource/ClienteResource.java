@@ -15,13 +15,13 @@ import com.rdgcardoso.cursomc.service.ClienteService;
 public class ClienteResource {
 	
 	@Autowired
-	private ClienteService clienteService;
+	private ClienteService service;
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<?> buscarPorId(@PathVariable Integer id) {
+	public ResponseEntity<?> find(@PathVariable Integer id) {
 		
-		Cliente cliente = clienteService.buscarPorId(id);
+		Cliente obj = service.buscarPorId(id);
 		
-		return ResponseEntity.ok(cliente);
+		return ResponseEntity.ok(obj);
 	}
 }

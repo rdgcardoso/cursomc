@@ -15,13 +15,13 @@ import com.rdgcardoso.cursomc.service.PedidoService;
 public class PedidoResource {
 	
 	@Autowired
-	private PedidoService pedidoService;
+	private PedidoService service;
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<?> buscarPorId(@PathVariable Integer id) {
+	public ResponseEntity<?> find(@PathVariable Integer id) {
 		
-		Pedido pedido = pedidoService.buscarPorId(id);
+		Pedido obj = service.buscarPorId(id);
 		
-		return ResponseEntity.ok(pedido);
+		return ResponseEntity.ok(obj);
 	}
 }
