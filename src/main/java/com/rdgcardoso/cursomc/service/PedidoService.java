@@ -6,19 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rdgcardoso.cursomc.service.exception.ObjectNotFoundException;
-import com.rdgcardoso.cursomc.model.Cliente;
-import com.rdgcardoso.cursomc.repository.ClienteRepository;
+import com.rdgcardoso.cursomc.model.Pedido;
+import com.rdgcardoso.cursomc.repository.PedidoRepository;
 
 @Service
-public class ClienteService {
+public class PedidoService {
 	
 	@Autowired
-	private ClienteRepository repo;
+	private PedidoRepository repo;
 		
-	public Cliente buscarPorId(Integer id) {
-		Optional<Cliente> obj = repo.findById(id);
+	public Pedido buscarPorId(Integer id) {
+		Optional<Pedido> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
-		 "Objeto não encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
+		 "Objeto não encontrado! Id: " + id + ", Tipo: " + Pedido.class.getName()));
 	} 
 
 }
