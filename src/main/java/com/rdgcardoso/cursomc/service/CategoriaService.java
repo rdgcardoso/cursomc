@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.rdgcardoso.cursomc.service.exception.DataIntegrityException;
 import com.rdgcardoso.cursomc.service.exception.ObjectNotFoundException;
+import com.rdgcardoso.cursomc.dto.CategoriaDTO;
 import com.rdgcardoso.cursomc.model.Categoria;
 import com.rdgcardoso.cursomc.repository.CategoriaRepository;
 
@@ -57,4 +58,7 @@ public class CategoriaService {
 		return repo.findAll(pageRequest);
 	}
 
+	public Categoria fromDTO(CategoriaDTO objDto) {
+		return new Categoria(objDto.getId(), objDto.getNome());
+	}
 }
