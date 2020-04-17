@@ -2,9 +2,11 @@ package com.rdgcardoso.cursomc.model;
 
 import javax.persistence.Entity;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.rdgcardoso.cursomc.model.enums.EstadoPagamento;
 
 @Entity
+@JsonTypeName("pagamentoCartao")
 public class PagamentoCartao extends Pagamento{
 	private static final long serialVersionUID = 1L;
 	
